@@ -11,6 +11,11 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
+    def new(self, obj):
+        """ creates an object"""
+        key = "{}.{}".format(obj.__clas__.__name__, obj.id)
+        FileStorage.__objects[key] = obj
+
     def all(self):
         """ returns a dictionary contains all objects"""
         return (FileStorage.__objects)
