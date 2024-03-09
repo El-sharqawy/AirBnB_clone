@@ -5,17 +5,15 @@ Base Model Class
 
 from uuid import uuid4
 from datetime import datetime
+import models
 
 class BaseModel:
     """BaseModel Class"""
     def __init__(self, *args, **kwargs):
         """Initialization"""
-        if kwargs:
-            pass
-        else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
-            self.updated_at = datetime.today()
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
 
     def __str__(self):
         """returns a string of the class data"""
