@@ -15,7 +15,7 @@ from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """ the definition of HBnB command interperter"""
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, arg):
         """ Quit to exit the program"""
