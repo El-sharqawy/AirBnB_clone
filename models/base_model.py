@@ -10,8 +10,10 @@ import models
 
 class BaseModel:
     """BaseModel Class"""
+
     def __init__(self, *args, **kwargs):
         """Initialization"""
+
         self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()

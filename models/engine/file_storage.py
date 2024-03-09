@@ -4,7 +4,7 @@
 import json
 import models
 import os
-
+from models.base_model import BaseModel
 
 class FileStorage:
     """File Storage Class Variables"""
@@ -17,8 +17,8 @@ class FileStorage:
 
     def new(self, obj):
         """ creates an object"""
-        class_name = obj.__class__.__name__
-        FileStorage.__objects["{}.{}".format(class_name, obj.id)] = obj
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """ serialize the class objects to JSON file"""
