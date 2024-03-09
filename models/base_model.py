@@ -7,6 +7,7 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """BaseModel Class"""
     def __init__(self, *args, **kwargs):
@@ -22,16 +23,18 @@ class BaseModel:
                 else:
                     self.__dict__[k] = v
         else:
-            pass
+            models.storage.new(self)
 
     def __str__(self):
-        """returns a string of the class data"""
-        string = "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        """returns a string of the class"""
+        class_name = self.__class__.__name__
+        string = "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
         return (string)
 
     def save(self):
         """Updates last time of the object"""
         self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """returns a new dictionary copy of the original"""

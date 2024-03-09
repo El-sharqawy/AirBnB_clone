@@ -6,6 +6,7 @@ import json
 import models
 import os
 
+
 class FileStorage:
     """File Storage Class Variables"""
     __file_path = "file.json"
