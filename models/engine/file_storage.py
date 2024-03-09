@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ File Storage Class Impelementation"""
 
-from models.base_model import BaseModel
 import json
 import models
 import os
@@ -18,8 +17,8 @@ class FileStorage:
 
     def new(self, obj):
         """ creates an object"""
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        FileStorage.__objects[key] = obj
+        class_name = obj.__class__.__name__
+        FileStorage.__objects["{}.{}".format(class_name, obj.id)] = obj
 
     def save(self):
         """ serialize the class objects to JSON file"""
