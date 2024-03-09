@@ -14,6 +14,15 @@ class BaseModel:
         self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
+        time_format = "%Y-%m-%dT%H:%M:%S.%f"
+        if len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "created_at" or k == "updated_at":
+                    self.__dict__[k] = datetime.strptime(v, time_format)
+                else:
+                    self.__dict__[k] = v
+        else:
+            pass
 
     def __str__(self):
         """returns a string of the class data"""
