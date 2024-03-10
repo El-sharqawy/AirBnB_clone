@@ -114,7 +114,7 @@ $
     <ul>
     <li><a href="https://www.github.com/El-sharqawy">Github</a></li>
     <li><a href="https://twitter.com/OsamaSharqawy">Twitter</a></li>
-    <li><a href="https://facebook.com/ssama.sharqawy">Facebook</a></li>
+    <li><a href="https://facebook.com/osama.sharqawy">Facebook</a></li>
     <li><a href="mailto:elsharqawy2@gmail.com">e-mail</a></li>
     </ul>
 </details>
